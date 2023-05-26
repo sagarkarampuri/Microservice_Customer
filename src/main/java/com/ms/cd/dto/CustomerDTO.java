@@ -1,5 +1,7 @@
 package com.ms.cd.dto;
 
+import java.util.List;
+
 import com.ms.cd.entity.Customer;
 
 public class CustomerDTO {
@@ -10,6 +12,8 @@ public class CustomerDTO {
 	private char gender;
 	private String password;
 	private StockDTO currentStock;
+	private List<Long> friendFamilyList;
+	private List<CallDTO> callRecords;
 
 	public static CustomerDTO createDTO(Customer customer) {
 		CustomerDTO customerDTO = new CustomerDTO();
@@ -71,4 +75,21 @@ public class CustomerDTO {
 	public void setCurrentStock(StockDTO stockDTO) {
 		this.currentStock = stockDTO;
 	}
+
+	public List<Long> getFriendFamilyList() {
+		return friendFamilyList;
+	}
+
+	public void setFriendFamilyList(List<Long> friendFamilyList) {
+		this.friendFamilyList = friendFamilyList;
+	}
+
+	public List<CallDTO> getCallRecords() {
+		return callRecords;
+	}
+
+	public void setCallRecords(List<CallDTO> callRecords) {
+		this.callRecords = callRecords;
+	}
+
 }

@@ -1,7 +1,6 @@
 package com.ms.cd.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 import com.ms.cd.dto.CustomerDTO;
@@ -15,13 +14,10 @@ public class CustomerServiceImpl implements CustomerService {
 	@Autowired
 	private CustomerRepository customerRepository;
 
-	@Autowired
-	private Environment environment;
-
 	@Override
 	public CustomerDTO getCustomerByContact(long contact) throws CustomerException {
-		Customer customer = customerRepository.findById(contact).orElseThrow(
-				() -> new CustomerException(environment.getProperty("CustomerService.customer_not_found") + contact));
+		Customer customer = customerRepository.findById(contact)
+				.orElseThrow(() -> new CustomerException("customer not found with phone number : " + contact));
 		return CustomerDTO.createDTO(customer);
 	}
 

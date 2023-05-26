@@ -1,0 +1,43 @@
+create database com.ms.customer;
+use com.ms.customer;
+
+(contact, age, gender, name, password, stock_id)
+values
+(9009009001, 25, M, Mark, mark@123^m, 101),
+(9009009002, 23, F, Linda, linda@#$123, 105),
+(9009009003, 24, M, Steve, steve@psb, 103);
+
+create database com.ms.call;
+use com.ms.call;
+
+insert into call(id, called_by, called_on, called_to, duration)
+values
+(9009009001, 2023-04-12, 9009009002, 34),
+(9009009002, 2023-04-11, 9009009003, 10),
+(9009009003, 2023-04-10, 9009009001, 4),
+(9009009001, 2023-04-13, 9009009002, 3),
+(9009009002, 2023-04-14, 9009009003, 20),
+(9009009003, 2023-04-15, 9009009001, 40),
+(9009009001, 2023-04-16, 9009009002, 7),
+(9009009002, 2023-04-17, 9009009003, 1);
+
+create database com.ms.stock;
+use com.ms.stock;
+
+insert into stock(company, face_value, price)
+values
+(Reliance Inds., 10, 2425.3),
+(Tata Consultancy, 1, 3285.1),
+(HDFC Bank, 1, 1603.9),
+(ICICI Bank, 2, 937.35),
+(Infosys, 5, 1299.5);
+
+create database com.ms.friends-family;
+use com.ms.friends-family;
+
+insert into friend_family(contact, friend_and_family)
+values
+(9009009001, 9009009002),
+(9009009001, 9009009003),
+(9009009002, 9009009005),
+(9009009003, 9009009001);
